@@ -1,8 +1,11 @@
 import React, {FC, useMemo} from 'react';
 import {Text} from 'react-native';
 import {TextProps} from './type';
-import {fontSizeScale, getFontFamily} from '../../utils/helpers';
-import {getSpacingStyle} from '../../utils/helpers';
+import {
+  fontSizeScale,
+  getFontFamily,
+  getSpacingStyle,
+} from '../../utils/helpers';
 
 const CText: FC<TextProps> = props => {
   const {

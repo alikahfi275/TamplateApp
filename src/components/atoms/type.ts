@@ -1,12 +1,15 @@
 import {ReactNode} from 'react';
 import {
+  TextInputProps as RNTextInputProps,
+  TextProps as RNTextProps,
+  ViewProps as RNViewProps,
   TextStyle,
-  TouchableOpacityProps as TouchableProps,
+  TouchableOpacityProps as RNTouchableOpacityProps,
   ViewStyle,
 } from 'react-native';
 
-export interface TextProps {
-  children: any;
+export interface TextProps extends RNTextProps {
+  children: ReactNode;
   fontSize?: number;
   color?: string;
   weight?: number;
@@ -30,7 +33,7 @@ export interface TextProps {
   onPress?: () => void;
 }
 
-export interface ViewProps {
+export interface ViewProps extends RNViewProps {
   children?: ReactNode;
   style?: ViewStyle | ViewStyle[];
   borderRadius?: number;
@@ -63,7 +66,7 @@ export interface ViewProps {
     | 'space-evenly';
 }
 
-export interface TouchableOpacityProps extends TouchableProps {
+export interface TouchableOpacityProps extends RNTouchableOpacityProps {
   children?: ReactNode;
   style?: ViewStyle | ViewStyle[];
   borderRadius?: number;
@@ -86,4 +89,27 @@ export interface TouchableOpacityProps extends TouchableProps {
   alignItems?: ViewStyle['alignItems'];
   justifyContent?: ViewStyle['justifyContent'];
   flexDirection?: ViewStyle['flexDirection'];
+}
+
+export interface CTextInputProps extends RNTextInputProps {
+  containerStyle?: ViewStyle | ViewStyle[];
+  borderRadius?: number;
+  margin?: number;
+  marginTop?: number;
+  marginBottom?: number;
+  marginLeft?: number;
+  marginRight?: number;
+  marginVertical?: number;
+  marginHorizontal?: number;
+  padding?: number;
+  paddingTop?: number;
+  paddingBottom?: number;
+  paddingLeft?: number;
+  paddingRight?: number;
+  paddingVertical?: number;
+  paddingHorizontal?: number;
+  backgroundColor?: string;
+  fontSize?: number;
+  color?: string;
+  weight?: '400' | '500' | '600' | '700';
 }
